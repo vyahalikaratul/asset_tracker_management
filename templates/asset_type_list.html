@@ -1,0 +1,18 @@
+<!-- asset_type_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Asset Types</h2>
+  <ul>
+    {% for asset_type in asset_types %}
+      <li>
+        {{ asset_type.name }}
+        <a href="{% url 'update_asset_type' pk=asset_type.pk %}">Update</a>
+        <a href="{% url 'confirm_asset_type_delete' pk=asset_type.pk %}">Delete</a>
+      </li>
+      <!-- Display other fields as needed -->
+    {% endfor %}
+  </ul>
+{% endblock %}
+

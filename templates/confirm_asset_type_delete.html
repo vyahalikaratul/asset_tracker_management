@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Confirm Asset Type Delete</h1>
+  <p>Are you sure? If you delete this asset type, all assets under this asset type will be deleted too!</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Confirm Delete</button>
+  </form>
+{% endblock %}

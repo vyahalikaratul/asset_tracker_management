@@ -1,0 +1,24 @@
+<!-- yourapp/templates/login.html -->
+
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+
+    <div class="fieldWrapper">
+        {{ form.email.errors }}
+        <label for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.password.errors }}
+        <label for="{{ form.password.id_for_label }}">Password:</label>
+        {{ form.password }}
+    </div>
+    <div class="fieldWrapper">
+        {{ form.remember_me.errors }}
+        <label for="{{ form.remember_me.id_for_label }}">{{ form.remember_me.label }}</label>
+        {{ form.remember_me }}
+    </div>
+
+    <button type="submit">Login</button>
+</form>

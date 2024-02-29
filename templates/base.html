@@ -1,0 +1,42 @@
+<!-- base.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Asset Management{% endblock %}</title>
+    <!-- Add your CSS files or CDN links here -->
+</head>
+<body>
+
+<header>
+    <h1>Asset Management System</h1>
+    <!-- Add your header content here -->
+</header>
+
+<nav>
+    <ul>
+        <li><a href="{% url 'asset_type_list' %}">Asset Types</a></li>
+        <li><a href="{% url 'create_asset_type' %}">Create Asset Type</a></li>
+        <li><a href="{% url 'asset_list' %}">Assets</a></li>
+        <li><a href="{% url 'create_asset' %}">Create Asset</a></li>
+        <!-- Add more navigation links as needed -->
+    </ul>
+</nav>
+
+<main>
+    {% block content %}
+    <!-- Placeholder for content -->
+    {% endblock %}
+</main>
+
+<footer>
+    <p>&copy; 2024 Asset Management System</p>
+    <!-- Add your footer content here -->
+</footer>
+
+<!-- Add your JavaScript files or CDN links here -->
+
+</body>
+</html>

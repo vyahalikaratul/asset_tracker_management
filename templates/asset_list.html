@@ -1,0 +1,13 @@
+<!-- asset_list.html -->
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Assets</h2>
+  <ul>
+    {% for asset in assets %}
+      <li>{{ asset.name }}</li>
+      <!-- Display other fields as needed -->
+    {% endfor %}
+  </ul>
+{% endblock %}
