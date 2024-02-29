@@ -55,15 +55,12 @@ class AssetForm(forms.ModelForm):
                                      if an asset with the same name already exists in the database.
         """
         name = self.cleaned_data.get('name')
+        # asset_type = self.cleaned_data.get('asset_type')
         if len(name) < 3:
             raise forms.ValidationError("Asset name must be at least 3 characters long.")
 
-        # try:
-        #     Asset.objects.get(name=name)
-        #     raise forms.ValidationError("An asset with this name already exists.")
-        # except Asset.DoesNotExist:
-        #     return name
         assets_with_same_name = Asset.objects.filter(name=name)
+
         if assets_with_same_name.exists():
             raise forms.ValidationError("An asset with this name already exists.")
 

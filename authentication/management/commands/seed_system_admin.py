@@ -17,7 +17,7 @@ class Command(BaseCommand):
 
         It creates a superuser with predefined username, email, and password if the user doesn't already exist.
         """
-        username = 'admin'
+        # username = 'admin'
         email = 'atulvyahalikar2010@gmail.com'
         password = 'atul1234'  # Choose a strong password
 
